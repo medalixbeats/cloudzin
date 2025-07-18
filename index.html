@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   cloudzin
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
+      --sky-start: #FFD580;
+      --sky-mid: #FF7F50;
+      --sky-end: #2C3E50;
+      --text-color: #fff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-color);
+      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
+      background-size: 400% 400%;
+      animation: bgShift 60s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+    @keyframes bgShift {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 0% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+    .sun {
+      position: absolute;
+      top: 40%;
+      left: -10%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #fff176, #ff7043);
+      border-radius: 50%;
+      animation: sunArc 60s linear infinite;
+      box-shadow: 0 0 60px rgba(255, 112, 67, 0.5);
+      background: radial-gradient(circle at center, #fff9c4 0%, #ffca28 40%, #ff7043 80%);
+      box-shadow: 0 0 30px 15px rgba(255, 200, 100, 0.6),
+                  0 0 80px 30px rgba(255, 140, 0, 0.4),
+                  0 0 120px 60px rgba(255, 120, 0, 0.2);
+    }
+    @keyframes sunArc {
+      0% {
+        transform: translate(0vw, 0vh);
+        opacity: 1;
+      }
+      25% {
+        transform: translate(25vw, -20vh);
+      }
+      50% {
+        transform: translate(50vw, -30vh);
+      }
+      75% {
+        transform: translate(75vw, -20vh);
+      }
+      100% {
+        transform: translate(100vw, 0vh);
+        opacity: 0;
+      }
+    }
+    .cloud {
+      position: absolute;
+      background: #fff;
+      opacity: 0.8;
+      border-radius: 50%;
+      animation: cloudDrift 80s linear infinite;
+      z-index: 1;
+    }
+    .cloud::before, .cloud::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .cloud1 {
+      width: 100px;
+      height: 60px;
+      top: 20%;
+      left: -200px;
+      animation-delay: 0s;
+    }
+    .cloud1::before {
+      width: 60px;
+      height: 60px;
+      top: -20px;
+      left: 20px;
+    }
+    .cloud1::after {
+      width: 80px;
+      height: 80px;
+      top: -30px;
+      left: 60px;
+    }
+    .cloud2 {
+      width: 120px;
+      height: 70px;
+      top: 35%;
+      left: -300px;
+      animation-delay: 30s;
+    }
+    .cloud2::before {
+      width: 70px;
+      height: 70px;
+      top: -20px;
+      left: 15px;
+    }
+    .cloud2::after {
+      width: 90px;
+      height: 90px;
+      top: -35px;
+      left: 60px;
+    }
+    @keyframes cloudDrift {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(160vw); }
+    }
+    main {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 650px;
+      width: 90vw;
+    }
+    .logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      text-transform: lowercase;
+      margin-bottom: 1rem;
+    }
+    .description {
+      max-width: 600px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 152px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1rem;
+    }
+    .platforms {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .platforms img {
+      width: 40px;
+      height: 40px;
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+      transition: transform 0.2s ease;
+    }
+    .platforms img:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      max-width: 650px;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      z-index: 2;
+      padding: 0 1rem;
+    }
+    footer .platforms {
+      margin-bottom: 0.5rem;
+      gap: 2rem;
+    }
+  
+    .x-logo {
+      transform: scale(1.3);
+    }
+  </style>
+ </head>
+ <body>
+  <div class="sun">
+  </div>
+  <div class="cloud cloud1">
+  </div>
+  <div class="cloud cloud2">
+  </div>
+  <main>
+   <img alt="cloudzin logo" class="logo" src="logo.png"/>
+   <h1>
+    cloudzin
+   </h1>
+   <div class="description">
+    <p>
+     cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.
+    </p>
+   </div>
+   <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e">
+   </iframe>
+   <div class="platforms">
+    <a aria-label="Spotify" href="https://open.spotify.com/artist/2dHfpdn18bWQf5vutaTSnX" rel="noopener noreferrer" target="_blank">
+     <img alt="Spotify logo" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"/>
+    </a>
+    <a aria-label="SoundCloud" href="https://soundcloud.com/cloudzin" rel="noopener noreferrer" target="_blank">
+     <img alt="SoundCloud logo" src="4c6272c3-22be-478b-af0c-1f03c963931d.png"/>
+    </a>
+    <a aria-label="YouTube Music" href="https://music.youtube.com/channel/UCQXhL0eLdEXi6PrgcBlAziQ" rel="noopener noreferrer" target="_blank">
+        <img alt="YouTube Music logo" src="youtube_music_logo.png"/>
+    </a>
+   </div>
+  </main>
+  <footer>
+   <div class="platforms">
+    <a aria-label="X" href="https://x.com/cloudzin_music" rel="noopener noreferrer" target="_blank">
+     <img alt="X logo" src="x-logo.png"/>
+    </a>
+    <a aria-label="Instagram" href="https://www.instagram.com/cloudzin_music" rel="noopener noreferrer" target="_blank">
+     <img alt="Instagram logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"/>
+    </a>
+   </div>
+   <p>
+    © 2025 cloudzin. All rights reserved.
+   </p>
+   <p>
+    for business inquiries please contact
+    <a href="mailto:cloudzinbeats@gmail.com">
+     cloudzinbeats@gmail.com
+    </a>
+   </p>
+  </footer>
+ </body>
+</html>
