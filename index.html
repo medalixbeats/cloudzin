@@ -17,16 +17,20 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
-      min-height: 100vh;
-      overflow-x: hidden;
+    html {
+      min-height: 100%;
       background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
-      font-family: 'Montserrat', sans-serif;
-      color: var(--text-color);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
     body {
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
+      background: transparent;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-color);
     }
     .wrapper {
       display: flex;
@@ -118,7 +122,6 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(160vw); }
     }
-
     .main-content {
       display: flex;
       flex-direction: column;
