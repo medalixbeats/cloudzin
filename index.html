@@ -27,7 +27,7 @@
       animation: bgShift 60s ease infinite;
       color: var(--text-color);
       overflow-x: hidden;
-      visibility: hidden; /* hide until animation ready */
+      visibility: hidden;
     }
 
     body.loaded {
@@ -133,18 +133,22 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      justify-content: center;
-      z-index: 2;
       position: relative;
+      z-index: 2;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
     }
 
     main {
-      flex: 1 0 auto;
-      text-align: center;
-      padding: 2rem 1rem;
       max-width: 650px;
       width: 100%;
-      margin: auto;
+      text-align: center;
     }
 
     .logo {
@@ -197,7 +201,6 @@
     }
 
     footer {
-      flex-shrink: 0;
       text-align: center;
       color: rgba(255,255,255,0.7);
       font-size: 0.9rem;
@@ -262,28 +265,30 @@
   <div class="cloud cloud2 fade-in fade-in-delay-3"></div>
 
   <div class="container">
-    <main class="fade-in fade-in-delay-1">
-      <img class="logo" src="logo.png" alt="cloudzin logo" />
-      <h1>cloudzin</h1>
-      <div class="description">
-        <p>
-          cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.
-        </p>
-      </div>
-      <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e"></iframe>
+    <div class="content fade-in fade-in-delay-1">
+      <main>
+        <img class="logo" src="logo.png" alt="cloudzin logo" />
+        <h1>cloudzin</h1>
+        <div class="description">
+          <p>
+            cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.
+          </p>
+        </div>
+        <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e"></iframe>
 
-      <div class="platforms">
-        <a href="https://open.spotify.com/artist/2dHfpdn18bWQf5vutaTSnX" target="_blank" aria-label="Spotify">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" />
-        </a>
-        <a href="https://soundcloud.com/cloudzin" target="_blank" aria-label="SoundCloud">
-          <img src="4c6272c3-22be-478b-af0c-1f03c963931d.png" alt="SoundCloud" />
-        </a>
-        <a href="https://music.youtube.com/channel/UCQXhL0eLdEXi6PrgcBlAziQ" target="_blank" aria-label="YouTube Music">
-          <img src="youtube_music_logo.png" alt="YouTube Music" />
-        </a>
-      </div>
-    </main>
+        <div class="platforms">
+          <a href="https://open.spotify.com/artist/2dHfpdn18bWQf5vutaTSnX" target="_blank" aria-label="Spotify">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify" />
+          </a>
+          <a href="https://soundcloud.com/cloudzin" target="_blank" aria-label="SoundCloud">
+            <img src="4c6272c3-22be-478b-af0c-1f03c963931d.png" alt="SoundCloud" />
+          </a>
+          <a href="https://music.youtube.com/channel/UCQXhL0eLdEXi6PrgcBlAziQ" target="_blank" aria-label="YouTube Music">
+            <img src="youtube_music_logo.png" alt="YouTube Music" />
+          </a>
+        </div>
+      </main>
+    </div>
 
     <footer class="fade-in fade-in-delay-2">
       <div class="platforms">
@@ -306,4 +311,3 @@
   </script>
 </body>
 </html>
-
