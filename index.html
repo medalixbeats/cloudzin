@@ -17,21 +17,16 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html {
+    html, body {
       height: 100%;
-      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
-      background-color: var(--sky-end);
-      overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
-    }
-    body {
-      min-height: 100vh;
-      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
-      background-color: var(--sky-end);
+      overflow-x: hidden;
       font-family: 'Montserrat', sans-serif;
       color: var(--text-color);
-      overflow-y: scroll;
+      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+    body {
       display: flex;
       flex-direction: column;
     }
@@ -44,10 +39,27 @@
       min-height: 100vh;
       padding-bottom: 2rem;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes sunArc {
+      0% { transform: translate(0vw, 0vh); opacity: 1; }
+      25% { transform: translate(25vw, -20vh); }
+      50% { transform: translate(50vw, -30vh); }
+      75% { transform: translate(75vw, -20vh); }
+      100% { transform: translate(100vw, 0vh); opacity: 0; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(2); }
+    }
+    @keyframes type {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
     .sun {
       position: absolute;
       top: 40%;
@@ -61,13 +73,6 @@
                   0 0 120px 60px rgba(255, 120, 0, 0.2);
       animation: sunArc 60s linear infinite;
       z-index: 0;
-    }
-    @keyframes sunArc {
-      0% { transform: translate(0vw, 0vh); opacity: 1; }
-      25% { transform: translate(25vw, -20vh); }
-      50% { transform: translate(50vw, -30vh); }
-      75% { transform: translate(75vw, -20vh); }
-      100% { transform: translate(100vw, 0vh); opacity: 0; }
     }
     .cloud {
       position: absolute;
@@ -155,7 +160,14 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.6;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid var(--text-color);
+      width: 0;
+      animation: type 2.5s steps(60, end) forwards;
+      animation-delay: 2s;
     }
+
     iframe {
       width: 100%;
       max-width: 600px;
@@ -181,10 +193,7 @@
     .bar:nth-child(3) { animation-delay: 0.4s; }
     .bar:nth-child(4) { animation-delay: 0.6s; }
     .bar:nth-child(5) { animation-delay: 0.8s; }
-    @keyframes pulse {
-      0%, 100% { transform: scaleY(1); }
-      50% { transform: scaleY(2); }
-    }
+
     .platforms {
       display: flex;
       justify-content: center;
@@ -200,6 +209,7 @@
     .platforms a:hover img {
       transform: scale(1.1);
     }
+
     footer {
       position: relative;
       z-index: 2;
@@ -222,6 +232,7 @@
     .x-logo:hover {
       transform: scale(1.1);
     }
+
     @media (max-width: 480px) {
       .description { font-size: 1rem; }
       .platforms img, .x-logo { width: 32px; height: 32px; }
@@ -238,7 +249,7 @@
       <img src="logo.png" alt="cloudzin logo" class="logo" />
       <h1>cloudzin</h1>
       <div class="description">
-        <p>cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.</p>
+        cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.
       </div>
       <iframe src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       <div class="visualizer">
