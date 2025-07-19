@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -18,28 +18,23 @@
       box-sizing: border-box;
     }
     html, body {
-      height: 100%;
+      min-height: 100vh;
       overflow-x: hidden;
-      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
+      overflow-y: auto;
       font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
       color: var(--text-color);
     }
-    body {
+    .wrapper {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
       position: relative;
       animation: fadeIn 2s ease-in;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes bgShift {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 0% 100%; }
-      100% { background-position: 0% 0%; }
     }
     .sun {
       position: absolute;
@@ -81,7 +76,6 @@
       height: 60px;
       top: 20%;
       left: -200px;
-      animation-delay: 0s;
     }
     .cloud1::before {
       width: 60px;
@@ -119,7 +113,6 @@
       100% { transform: translateX(160vw); }
     }
     main {
-      position: relative;
       z-index: 2;
       text-align: center;
       padding: 2rem;
@@ -180,17 +173,16 @@
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
-    .platforms img {
+    .platforms a img {
       width: 40px;
       height: 40px;
       filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
       transition: transform 0.3s ease;
     }
     .platforms a:hover img {
-      transform: scale(1.15);
+      transform: scale(1.1);
     }
     footer {
-      position: relative;
       z-index: 2;
       width: 100%;
       max-width: 650px;
@@ -213,32 +205,36 @@
   </style>
 </head>
 <body>
-  <div class="sun"></div>
-  <div class="cloud cloud1"></div>
-  <div class="cloud cloud2"></div>
-  <main>
-    <img src="logo.png" alt="cloudzin logo" class="logo" />
-    <h1>cloudzin</h1>
-    <div class="description">
-      <p>cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.</p>
-    </div>
-    <iframe src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <div class="visualizer">
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-    </div>
-    <div class="platforms">
-      <a href="https://open.spotify.com/artist/2dHfpdn18bWQf5vutaTSnX" target="_blank" aria-label="Spotify"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify logo" /></a>
-      <a href="https://soundcloud.com/cloudzin" target="_blank" aria-label="SoundCloud"><img src="4c6272c3-22be-478b-af0c-1f03c963931d.png" alt="SoundCloud logo" /></a>
-      <a href="https://music.youtube.com/channel/UCQXhL0eLdEXi6PrgcBlAziQ" target="_blank" aria-label="YouTube Music"><img src="youtube_music_logo.png" alt="YouTube Music logo" /></a>
-    </div>
-  </main>
-  <footer>
-    <div class="platforms">
-      <a href="https://x.com/cloudzin_music" target="_blank" aria-label="X"><img src="x-logo.png" alt="X logo" class="x-logo"></a>
-      <a href="https://www.instagram.com/cloudzin_music" target="_blank" aria-label="Instagram"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo"></a>
-    </div>
-    <p>© & ℗ 2025 cloudzin. All rights reserved.</p>
-    <p>for business inquiries please contact <a href="mailto:cloudzinbeats@gmail.com">cloudzinbeats@gmail.com</a></p>
-  </footer>
+  <div class="wrapper">
+    <div class="sun"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+
+    <main>
+      <img src="logo.png" alt="cloudzin logo" class="logo" />
+      <h1>cloudzin</h1>
+      <div class="description">
+        <p>cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.</p>
+      </div>
+      <iframe src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="visualizer">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      </div>
+      <div class="platforms">
+        <a href="https://open.spotify.com/artist/2dHfpdn18bWQf5vutaTSnX" target="_blank" aria-label="Spotify"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify logo" /></a>
+        <a href="https://soundcloud.com/cloudzin" target="_blank" aria-label="SoundCloud"><img src="4c6272c3-22be-478b-af0c-1f03c963931d.png" alt="SoundCloud logo" /></a>
+        <a href="https://music.youtube.com/channel/UCQXhL0eLdEXi6PrgcBlAziQ" target="_blank" aria-label="YouTube Music"><img src="youtube_music_logo.png" alt="YouTube Music logo" /></a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="platforms">
+        <a href="https://x.com/cloudzin_music" target="_blank" aria-label="X"><img src="x-logo.png" alt="X logo" class="x-logo"></a>
+        <a href="https://www.instagram.com/cloudzin_music" target="_blank" aria-label="Instagram"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo"></a>
+      </div>
+      <p>© & ℗ 2025 cloudzin. All rights reserved.</p>
+      <p>for business inquiries please contact <a href="mailto:cloudzinbeats@gmail.com">cloudzinbeats@gmail.com</a></p>
+    </footer>
+  </div>
 </body>
 </html>
