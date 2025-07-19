@@ -27,11 +27,6 @@
       animation: bgShift 60s ease infinite;
       color: var(--text-color);
       overflow-x: hidden;
-      visibility: hidden;
-    }
-
-    body.loaded {
-      visibility: visible;
     }
 
     @keyframes bgShift {
@@ -129,6 +124,7 @@
       100% { transform: translateX(160vw); }
     }
 
+    /* Layout Container */
     .container {
       display: flex;
       flex-direction: column;
@@ -137,7 +133,7 @@
       z-index: 2;
     }
 
-    .content {
+    .main-content {
       flex: 1;
       display: flex;
       align-items: center;
@@ -146,9 +142,9 @@
     }
 
     main {
+      text-align: center;
       max-width: 650px;
       width: 100%;
-      text-align: center;
     }
 
     .logo {
@@ -210,46 +206,13 @@
     footer .platforms {
       margin-bottom: 1rem;
       gap: 2rem;
+      display: flex;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
     .x-logo {
       transform: scale(1.3);
-    }
-
-    /* Fade-in Animation */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in {
-      opacity: 0;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .fade-in-delay-1 {
-      animation-delay: 0.2s;
-    }
-
-    .fade-in-delay-2 {
-      animation-delay: 0.4s;
-    }
-
-    .fade-in-delay-3 {
-      animation-delay: 0.6s;
-    }
-
-    @media (max-width: 768px) {
-      html, body {
-        overflow-y: auto;
-      }
     }
 
     @media (max-height: 600px) {
@@ -260,12 +223,14 @@
   </style>
 </head>
 <body>
-  <div class="sun fade-in fade-in-delay-1"></div>
-  <div class="cloud cloud1 fade-in fade-in-delay-2"></div>
-  <div class="cloud cloud2 fade-in fade-in-delay-3"></div>
+  <!-- Background elements -->
+  <div class="sun"></div>
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
 
+  <!-- Layout content -->
   <div class="container">
-    <div class="content fade-in fade-in-delay-1">
+    <div class="main-content">
       <main>
         <img class="logo" src="logo.png" alt="cloudzin logo" />
         <h1>cloudzin</h1>
@@ -274,7 +239,9 @@
             cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.
           </p>
         </div>
-        <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e"></iframe>
+        <iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e"></iframe>
 
         <div class="platforms">
           <a href="https://open.spotify.com/artist/2dHfpdn18bWQf5vutaTSnX" target="_blank" aria-label="Spotify">
@@ -290,7 +257,7 @@
       </main>
     </div>
 
-    <footer class="fade-in fade-in-delay-2">
+    <footer>
       <div class="platforms">
         <a href="https://x.com/cloudzin_music" target="_blank" aria-label="X">
           <img src="x-logo.png" alt="X logo" class="x-logo" />
@@ -303,11 +270,5 @@
       <p>For business inquiries, please contact <a href="mailto:cloudzinbeats@gmail.com">cloudzinbeats@gmail.com</a></p>
     </footer>
   </div>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('loaded');
-    });
-  </script>
 </body>
 </html>
