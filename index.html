@@ -12,22 +12,24 @@
       --sky-end: #2C3E50;
       --text-color: #fff;
     }
-    *, *::before, *::after {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     html {
-      height: 100%;
       background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
-      overscroll-behavior: none;
+      height: 100%;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
     body {
-      min-height: 100dvh;
+      min-height: 100vh;
       background: inherit;
       font-family: 'Montserrat', sans-serif;
       color: var(--text-color);
-      overflow-x: hidden;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       display: flex;
       flex-direction: column;
     }
@@ -121,6 +123,7 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(160vw); }
     }
+
     .main-content {
       display: flex;
       flex-direction: column;
