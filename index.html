@@ -19,28 +19,23 @@
     }
     html, body {
       min-height: 100vh;
-      overflow-x: hidden;
       background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
       font-family: 'Montserrat', sans-serif;
       color: var(--text-color);
+      overflow-x: hidden;
     }
     body {
       display: flex;
       flex-direction: column;
     }
+
     .wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       flex: 1;
-      min-height: 100vh;
-      padding-bottom: 2rem;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+
     .sun {
       position: absolute;
       top: 40%;
@@ -55,6 +50,7 @@
       animation: sunArc 60s linear infinite;
       z-index: 0;
     }
+
     @keyframes sunArc {
       0% { transform: translate(0vw, 0vh); opacity: 1; }
       25% { transform: translate(25vw, -20vh); }
@@ -62,6 +58,7 @@
       75% { transform: translate(75vw, -20vh); }
       100% { transform: translate(100vw, 0vh); opacity: 0; }
     }
+
     .cloud {
       position: absolute;
       background: #fff;
@@ -76,6 +73,7 @@
       background: #fff;
       border-radius: 50%;
     }
+
     .cloud1 {
       width: 100px;
       height: 60px;
@@ -95,6 +93,7 @@
       top: -30px;
       left: 60px;
     }
+
     .cloud2 {
       width: 120px;
       height: 70px;
@@ -114,6 +113,7 @@
       top: -35px;
       left: 60px;
     }
+
     @keyframes cloudDrift {
       0% { transform: translateX(0); }
       100% { transform: translateX(160vw); }
@@ -123,13 +123,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      flex: 1;
       text-align: center;
-      animation: fadeIn 2s ease-in;
       padding: 2rem;
       z-index: 2;
+      width: 100%;
+      max-width: 650px;
     }
+
     .logo {
       width: 130px;
       height: 130px;
@@ -138,17 +138,20 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       margin-bottom: 1rem;
     }
+
     h1 {
       font-size: clamp(2rem, 6vw, 3rem);
       text-transform: lowercase;
       margin-bottom: 1rem;
     }
+
     .description {
-      max-width: 600px;
       font-size: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.6;
+      max-width: 600px;
     }
+
     iframe {
       width: 100%;
       max-width: 600px;
@@ -158,41 +161,53 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
       margin-bottom: 1rem;
     }
+
     .visualizer {
       display: flex;
       justify-content: center;
       gap: 5px;
       margin: 0.5rem 0 2rem;
     }
+
     .bar {
       width: 5px;
       height: 20px;
       background: white;
       animation: pulse 1s infinite ease-in-out;
     }
+
     .bar:nth-child(2) { animation-delay: 0.2s; }
     .bar:nth-child(3) { animation-delay: 0.4s; }
     .bar:nth-child(4) { animation-delay: 0.6s; }
     .bar:nth-child(5) { animation-delay: 0.8s; }
+
     @keyframes pulse {
       0%, 100% { transform: scaleY(1); }
       50% { transform: scaleY(2); }
     }
+
     .platforms {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
-    .platforms img {
+
+    .platforms a img {
       width: 40px;
       height: 40px;
       filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
       transition: transform 0.3s ease;
     }
+
     .platforms a:hover img {
       transform: scale(1.1);
     }
+
+    .x-logo {
+      transform: scale(1); /* Normal size by default */
+    }
+
     footer {
       position: relative;
       z-index: 2;
@@ -202,22 +217,17 @@
       color: rgba(255,255,255,0.8);
       font-size: 0.9rem;
       padding: 1rem;
+      margin-top: auto;
     }
+
     footer .platforms {
       margin-bottom: 0.5rem;
       gap: 2rem;
     }
-    .x-logo {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s ease;
-    }
-    .x-logo:hover {
-      transform: scale(1.1);
-    }
+
     @media (max-width: 480px) {
       .description { font-size: 1rem; }
-      .platforms img, .x-logo { width: 32px; height: 32px; }
+      .platforms a img { width: 32px; height: 32px; }
     }
   </style>
 </head>
@@ -246,8 +256,8 @@
 
     <footer>
       <div class="platforms">
-        <a href="https://x.com/cloudzin_music" target="_blank"><img src="x-logo.png" alt="X logo" class="x-logo"></a>
-        <a href="https://www.instagram.com/cloudzin_music" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo"></a>
+        <a href="https://x.com/cloudzin_music" target="_blank"><img src="x-logo.png" alt="X logo" class="x-logo" /></a>
+        <a href="https://www.instagram.com/cloudzin_music" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo" /></a>
       </div>
       <p>© & ℗ 2025 cloudzin. All rights reserved.</p>
       <p>for business inquiries please contact <a href="mailto:cloudzinbeats@gmail.com">cloudzinbeats@gmail.com</a></p>
