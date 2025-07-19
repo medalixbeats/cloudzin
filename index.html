@@ -18,14 +18,16 @@
       box-sizing: border-box;
     }
     html {
-      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
       height: 100%;
+      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
+      background-color: var(--sky-end);
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
     }
     body {
       min-height: 100vh;
-      background: inherit;
+      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
+      background-color: var(--sky-end);
       font-family: 'Montserrat', sans-serif;
       color: var(--text-color);
       overflow-y: scroll;
