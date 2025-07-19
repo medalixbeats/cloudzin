@@ -19,23 +19,25 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: auto;
-      min-height: 100%;
+    html {
+      scroll-behavior: smooth;
+      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    body {
+      min-height: 100vh;
       overflow-x: hidden;
       overflow-y: auto;
       font-family: 'Montserrat', sans-serif;
       color: var(--text-color);
-      background: linear-gradient(to bottom, var(--sky-start), var(--sky-mid), var(--sky-end));
-      background-size: 400% 400%;
-      animation: bgShift 60s ease infinite;
-    }
-
-    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
+      overscroll-behavior: none;
     }
 
     @keyframes bgShift {
@@ -195,7 +197,6 @@
 
     footer {
       position: relative;
-      bottom: auto;
       width: 100%;
       max-width: 650px;
       text-align: center;
