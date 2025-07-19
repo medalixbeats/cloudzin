@@ -55,10 +55,6 @@
       0%, 100% { transform: scaleY(1); }
       50% { transform: scaleY(2); }
     }
-    @keyframes type {
-      from { width: 0 }
-      to { width: 100% }
-    }
 
     .sun {
       position: absolute;
@@ -160,12 +156,6 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.6;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 2px solid var(--text-color);
-      width: 0;
-      animation: type 2.5s steps(60, end) forwards;
-      animation-delay: 2s;
     }
 
     iframe {
