@@ -165,7 +165,7 @@
     iframe {
       width: 100%;
       max-width: 600px;
-      height: 152px;
+      height: 352px; /* updated to match artist embed */
       border: none;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -245,7 +245,13 @@
       <div class="description">
         cloudzin is a chill lo-fi beat maker whose music captures the feeling of golden hour — calm, hazy, and reflective. Perfect for studying, relaxing, or dreaming beyond the skyline.
       </div>
-      <iframe src="https://open.spotify.com/embed/track/1qGtfxYhO7XzvSBIlC7qEY?si=1940e078e0ce486e" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe data-testid="embed-iframe" style="border-radius:12px" 
+        src="https://open.spotify.com/embed/artist/2dHfpdn18bWQf5vutaTSnX?utm_source=generator&theme=0" 
+        width="100%" height="352" frameborder="0" allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy"></iframe>
+
       <div class="visualizer">
         <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
       </div>
@@ -260,7 +266,6 @@
       <div class="platforms">
         <a href="https://x.com/cloudzin_music" target="_blank"><img src="x-logo.png" alt="X logo" class="x-logo"></a>
         <a href="https://www.instagram.com/cloudzin_music" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo"></a>
-        <a href="https://www.tiktok.com/@cloudzin_music" target="_blank"><img src="tiktok.jpg" alt="TikTok logo" class="x-logo"></a>
       </div>
       <p>© & ℗ 2025 cloudzin. All rights reserved. | Website created by <a href="https://medalixbeats.github.io/medalix">medalix</a></p>
       <p>For business inquiries please contact <a href="mailto:cloudzinbeats@gmail.com">cloudzinbeats@gmail.com</a></p>
